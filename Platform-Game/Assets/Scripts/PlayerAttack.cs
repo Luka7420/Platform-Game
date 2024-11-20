@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
             Attack();
 
-        cooldownTimer = Time.deltaTime;
+        cooldownTimer += Time.deltaTime; //Greska u kodu, nemoj da zaboravis += (quicktype)
     }
 
     private void Attack()
@@ -29,19 +29,19 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer = 0;
 
         //pool fireballs
-        fireballs[0].transform.position = firePoint.position;
-        fireballs[0].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        fireballs[FindFireball()].transform.position = firePoint.position;
+        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
-    //private int FindFireball()
-    //{
-    //    for (int i = 0; i < fireballs.Length; i++)
-    //    {
-    //        if (!fireballs[i].activeInHierarchy)
-    //            return i;
-    //    }
+    private int FindFireball()
+    {
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+                return i;
+        }
 
-    //    return 0;
-    //}
+        return 0;
+    }
 
 }
