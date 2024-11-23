@@ -54,5 +54,8 @@ TagManager:
   - name: Ground
     uniqueID: 2901996885
     locked: 0
+  - name: Fireball
+    uniqueID: 405778901
+    locked: 0
   m_RenderingLayers:
   - Default
