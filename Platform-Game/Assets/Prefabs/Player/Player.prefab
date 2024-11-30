@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629d121ee1471ea43a692304d049b9bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: 92fa8816a481e21478bc6786c505da42, type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -265,6 +266,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  fireballSound: {fileID: 8300000, guid: 74c3399efdfa68b44a817f334684c29a, type: 3}
 --- !u!114 &5444584616923415081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,3 +285,5 @@ MonoBehaviour:
   components:
   - {fileID: 6948133159096450032}
   - {fileID: 6453811252934392349}
+  deathSound: {fileID: 8300000, guid: e9802bdf144d80e41b7e46b3f91b0257, type: 3}
+  hurtSound: {fileID: 8300000, guid: 71f4c3279185edd4da000d3104a45767, type: 3}

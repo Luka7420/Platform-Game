@@ -17,6 +17,11 @@ public class Health : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
+    private bool invulnerable;
+
+    [Header("Death sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
 
     private void Awake()
     {
@@ -27,6 +32,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
+        if (invulnerable) return; 
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         
         if(currentHealth > 0)
@@ -34,6 +40,7 @@ public class Health : MonoBehaviour
             //Igrac je povredjen
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
+            SoundManager.instance.PlaySound(hurtSound);
         }
         else
         {
@@ -59,6 +66,7 @@ public class Health : MonoBehaviour
                 
 
                 dead = true;
+                SoundManager.instance.PlaySound(deathSound);
             }
             
         }
@@ -70,6 +78,7 @@ public class Health : MonoBehaviour
 
     private IEnumerator Invunerability()
     {
+        invulnerable = true;
         Physics2D.IgnoreLayerCollision(8,9,true);
         for(int i = 0; i < numberOfFlashes; i++)
         {
@@ -79,6 +88,7 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(8, 9, false);
+        invulnerable = false;
     }
     private void Deactivate()
     {
