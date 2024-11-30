@@ -211,6 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 92fa8816a481e21478bc6786c505da42, type: 3}
+  coyoteTime: 0.25
+  extraJumps: 1
+  wallJumpX: 2000
+  wallJumpY: 750
   groundLayer:
     serializedVersion: 2
     m_Bits: 64

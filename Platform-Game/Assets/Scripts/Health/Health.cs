@@ -47,7 +47,7 @@ public class Health : MonoBehaviour
             //Igrac je mrtav
             if(!dead)
             {
-                anim.SetTrigger("die");
+                
 
 
                 ////Igrac/Player
@@ -63,7 +63,9 @@ public class Health : MonoBehaviour
 
                 foreach(Behaviour component in components)
                     component.enabled = false;
-                
+
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("die");
 
                 dead = true;
                 SoundManager.instance.PlaySound(deathSound);
