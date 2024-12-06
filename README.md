@@ -1,8 +1,6 @@
 # Platform-Game
 
-**My 2D Platformer Game**
-
-**Welcome to my Unity 2D platformer project!** 🎮
+**My 2D Platformer Game** 🎮
 
 **Overview**
 
