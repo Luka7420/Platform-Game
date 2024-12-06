@@ -1,10 +1,10 @@
 # Platform-Game
 
-# My 2D Platformer Game
+**My 2D Platformer Game**
 
-# Welcome to my Unity 2D platformer project! 🎮
+**Welcome to my Unity 2D platformer project!** 🎮
 
-# Overview
+**Overview**
 
 This is my first Unity platformer. While I followed a few tutorials by Pandemonium, the majority of the game design, mechanics, and features were developed independently by me. The game is still work in progress.
 
