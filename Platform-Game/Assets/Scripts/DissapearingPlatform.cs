@@ -13,7 +13,7 @@ public class DisappearingPlatform : MonoBehaviour
 
     private void Start()
     {
-        // Cache the platform's Renderer and original color
+        
         platformRenderer = GetComponent<Renderer>();
         originalColor = platformRenderer.material.color;
     }
